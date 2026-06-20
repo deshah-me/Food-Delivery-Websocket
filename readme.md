@@ -54,3 +54,9 @@ Frontend:
 cd frontend
 npm test
 ```
+
+
+## Screenshots
+<img width="935" height="517" alt="image" src="https://github.com/user-attachments/assets/a09db8a2-8268-4b33-a9e2-46dedbed440a" />
+<img width="958" height="533" alt="image" src="https://github.com/user-attachments/assets/aba34818-1184-48aa-b53a-b00890e00dd8" />
+
