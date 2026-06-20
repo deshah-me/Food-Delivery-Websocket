@@ -1,0 +1,191 @@
+[2m10:23:15 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: buildOrderKey is not defined
+[39m > KitchenPage src/App.jsx:108:6
+    106 |    const hasOrderFields = Boolean(trimmedOrderId && trimmedCustomerName);
+    107 |    const currentOrderStatus = hasOrderFields
+    108 |      ? orderProgress[buildOrderKey(trimmedOrderId, trimmedCustomerName)]?.status ?? null
+        |        ^
+    109 |      : null;
+    110 |  
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > HTMLUnknownElement.callCallback node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m10:23:15 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: buildOrderKey is not defined
+[39m > KitchenPage src/App.jsx:108:6
+    106 |    const hasOrderFields = Boolean(trimmedOrderId && trimmedCustomerName);
+    107 |    const currentOrderStatus = hasOrderFields
+    108 |      ? orderProgress[buildOrderKey(trimmedOrderId, trimmedCustomerName)]?.status ?? null
+        |        ^
+    109 |      : null;
+    110 |  
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > HTMLUnknownElement.callCallback node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m10:23:15 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <KitchenPage> component:
+
+    at KitchenPage (http://127.0.0.1:5173/src/App.jsx?t=1781931194889:98:24)
+    at section
+    at main
+    at App (http://127.0.0.1:5173/src/App.jsx?t=1781931194889:37:21)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m10:23:15 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: buildOrderKey is not defined
+[39m > KitchenPage src/App.jsx:108:6
+    106 |    const hasOrderFields = Boolean(trimmedOrderId && trimmedCustomerName);
+    107 |    const currentOrderStatus = hasOrderFields
+    108 |      ? orderProgress[buildOrderKey(trimmedOrderId, trimmedCustomerName)]?.status ?? null
+        |        ^
+    109 |      : null;
+    110 |  
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26505:4
+ > renderRootSync node_modules/react-dom/cjs/react-dom.development.js:26473:6
+ > recoverFromConcurrentError node_modules/react-dom/cjs/react-dom.development.js:25889:19
+ > performSyncWorkOnRoot node_modules/react-dom/cjs/react-dom.development.js:26135:19
+
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: buildOrderKey is not defined
+[39m > KitchenPage src/App.jsx:108:6
+    106 |    const hasOrderFields = Boolean(trimmedOrderId && trimmedCustomerName);
+    107 |    const currentOrderStatus = hasOrderFields
+    108 |      ? orderProgress[buildOrderKey(trimmedOrderId, trimmedCustomerName)]?.status ?? null
+        |        ^
+    109 |      : null;
+    110 |  
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > HTMLUnknownElement.callCallback node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: buildOrderKey is not defined
+[39m > KitchenPage src/App.jsx:108:6
+    106 |    const hasOrderFields = Boolean(trimmedOrderId && trimmedCustomerName);
+    107 |    const currentOrderStatus = hasOrderFields
+    108 |      ? orderProgress[buildOrderKey(trimmedOrderId, trimmedCustomerName)]?.status ?? null
+        |        ^
+    109 |      : null;
+    110 |  
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > HTMLUnknownElement.callCallback node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <KitchenPage> component:
+
+    at KitchenPage (http://127.0.0.1:5173/src/App.jsx?t=1781931213831:98:24)
+    at section
+    at main
+    at App (http://127.0.0.1:5173/src/App.jsx?t=1781931213831:37:21)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: buildOrderKey is not defined
+[39m > KitchenPage src/App.jsx:108:6
+    106 |    const hasOrderFields = Boolean(trimmedOrderId && trimmedCustomerName);
+    107 |    const currentOrderStatus = hasOrderFields
+    108 |      ? orderProgress[buildOrderKey(trimmedOrderId, trimmedCustomerName)]?.status ?? null
+        |        ^
+    109 |      : null;
+    110 |  
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26505:4
+ > renderRootSync node_modules/react-dom/cjs/react-dom.development.js:26473:6
+ > recoverFromConcurrentError node_modules/react-dom/cjs/react-dom.development.js:25889:19
+ > performSyncWorkOnRoot node_modules/react-dom/cjs/react-dom.development.js:26135:19
+
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: buildOrderTrackers is not defined
+[39m > src/App.jsx:225:38
+    223 |    const [bannerMessage, setBannerMessage] = useState(null);
+    224 |    const toastTimers = useRef(new Map());
+    225 |    const orderTrackers = useMemo(() => buildOrderTrackers(notifications), [notifications]);
+        |                                        ^
+    226 |  
+    227 |    useEffect(() => {
+ > mountMemo node_modules/react-dom/cjs/react-dom.development.js:16406:18
+ > Object.useMemo node_modules/react-dom/cjs/react-dom.development.js:16851:15
+ > useMemo node_modules/react/cjs/react.development.js:1650:20
+ > CustomerPage src/App.jsx:225:24
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > HTMLUnknownElement.callCallback node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev node_modules/react-dom/cjs/react-dom.development.js:4213:15
+
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: buildOrderTrackers is not defined
+[39m > src/App.jsx:225:38
+    223 |    const [bannerMessage, setBannerMessage] = useState(null);
+    224 |    const toastTimers = useRef(new Map());
+    225 |    const orderTrackers = useMemo(() => buildOrderTrackers(notifications), [notifications]);
+        |                                        ^
+    226 |  
+    227 |    useEffect(() => {
+ > mountMemo node_modules/react-dom/cjs/react-dom.development.js:16406:18
+ > Object.useMemo node_modules/react-dom/cjs/react-dom.development.js:16851:15
+ > useMemo node_modules/react/cjs/react.development.js:1650:20
+ > CustomerPage src/App.jsx:225:24
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > HTMLUnknownElement.callCallback node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev node_modules/react-dom/cjs/react-dom.development.js:4213:15
+
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <CustomerPage> component:
+
+    at CustomerPage (http://127.0.0.1:5173/src/App.jsx?t=1781931213831:317:25)
+    at section
+    at main
+    at App (http://127.0.0.1:5173/src/App.jsx?t=1781931213831:37:21)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m10:23:34 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mReferenceError[22m: buildOrderTrackers is not defined
+[39m > src/App.jsx:225:38
+    223 |    const [bannerMessage, setBannerMessage] = useState(null);
+    224 |    const toastTimers = useRef(new Map());
+    225 |    const orderTrackers = useMemo(() => buildOrderTrackers(notifications), [notifications]);
+        |                                        ^
+    226 |  
+    227 |    useEffect(() => {
+ > mountMemo node_modules/react-dom/cjs/react-dom.development.js:16406:18
+ > Object.useMemo node_modules/react-dom/cjs/react-dom.development.js:16851:15
+ > useMemo node_modules/react/cjs/react.development.js:1650:20
+ > CustomerPage src/App.jsx:225:24
+ > renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20103:12
+ > beginWork node_modules/react-dom/cjs/react-dom.development.js:21626:15
+ > beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26596:11
+
+[2m10:46:50 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m10:46:50 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
