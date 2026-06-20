@@ -1,0 +1,11 @@
+# Backend build and Gradle artifacts
+/backend/.gradle/
+/backend/build/
+/backend/package-lock.json
+*.log
+
+# Frontend dependencies and outputs
+/frontend/node_modules/
+/frontend/dist/
+/frontend/coverage/
+/frontend/package-lock.json
