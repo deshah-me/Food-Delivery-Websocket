@@ -19,7 +19,7 @@ npm install
 npm run dev
 ```
 
-Open the kitchen page at `http://127.0.0.1:5173/kitchen` and the customer page at `http://127.0.0.1:5173/customer`. These are separate pages with no in-app Kitchen/Customer toggle.
+Open the kitchen page at `http://127.0.0.1:5173/kitchen` and the customer page at `http://127.0.0.1:5173/customer`.
 
 Enter an order id and customer name on the kitchen page, then use the `Order Placed`, `Preparing`, and `Delivered` buttons to publish order updates. The kitchen page only enables the next valid step, so an order must be placed before it can be prepared, and prepared before it can be delivered. Use `Clear` on the kitchen page to remove all notifications, reset the order status history, and start fresh.
 

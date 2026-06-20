@@ -97,7 +97,7 @@ describe('App', () => {
     await user.type(screen.getByLabelText(/customer/i), 'Aarav');
     await user.click(screen.getByRole('button', { name: /order placed/i }));
 
-    expect(fetch).toHaveBeenCalledWith('http://localhost:8080/api/orders/status', {
+    expect(fetch).toHaveBeenCalledWith('/api/orders/status', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: /^delivered$/i })).toBeDisabled();
 
     await user.click(screen.getByRole('button', { name: /^clear$/i }));
-    expect(fetch).toHaveBeenCalledWith('http://localhost:8080/api/orders/notifications', {
+    expect(fetch).toHaveBeenCalledWith('/api/orders/notifications', {
       method: 'DELETE',
     });
     expect(screen.getByLabelText(/order id/i)).toHaveValue('');
