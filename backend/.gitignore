@@ -1,6 +1,25 @@
-backend/.gradle/
-backend/build/
-frontend/node_modules/
-frontend/dist/
-frontend/coverage/
+# Node / frontend
+node_modules/
+dist/
+coverage/
+.vite/
+npm-debug.log*
+
+# Java / Gradle backend
+.gradle/
+build/
+bin/
+out/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log
