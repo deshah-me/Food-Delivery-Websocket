@@ -188,7 +188,7 @@ describe('App', () => {
     expect(screen.queryByRole('button', { name: /order placed/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /^clear$/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /kitchen/i })).not.toBeInTheDocument();
-    expect(MockWebSocket.instances[0].url).toBe('ws://localhost:8080/ws/notifications');
+    expect(MockWebSocket.instances[0].url).toMatch(/^ws:\/\/localhost(:\d+)?\/ws\/notifications$/);
     expect(await screen.findByText('2 orders')).toBeInTheDocument();
 
     const meeraCard = screen.getByText('Meera').closest('article');

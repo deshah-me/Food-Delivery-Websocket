@@ -3,14 +3,20 @@ import CustomerPage from './pages/CustomerPage.jsx';
 import KitchenPage from './pages/KitchenPage.jsx';
 
 function getApiBaseUrl() {
-  return import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080';
+  return import.meta.env.VITE_API_BASE_URL ?? '';
 }
 
 function getWebSocketUrl(apiBaseUrl) {
-  const url = new URL(apiBaseUrl);
-  url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
-  url.pathname = '/ws/notifications';
-  url.search = '';
+  if (apiBaseUrl) {
+    const url = new URL(apiBaseUrl);
+    url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
+    url.pathname = '/ws/notifications';
+    url.search = '';
+    return url.toString();
+  }
+
+  const url = new URL('/ws/notifications', window.location.origin);
+  url.protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   return url.toString();
 }
 
