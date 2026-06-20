@@ -1,0 +1,47 @@
+{
+    "name": "Food Delivery WebSocket Dev",
+    "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "installGradle": "true",
+            "gradleVersion": "8.14.4"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "forwardPorts": [
+        8080,
+        5173
+    ],
+    "portsAttributes": {
+        "8080": {
+            "label": "Spring Boot Backend",
+            "onAutoForward": "notify"
+        },
+        "5173": {
+            "label": "Vite Frontend",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postCreateCommand": "cd backend && ./gradlew --version && cd ../frontend && npm install",
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-boot-dev-pack",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "dsznajder.es7-react-js-snippets",
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "java.configuration.updateBuildConfiguration": "automatic",
+                "java.jdt.ls.java.home": "/usr/lib/jvm/msopenjdk-current"
+            }
+        }
+    }
+}
