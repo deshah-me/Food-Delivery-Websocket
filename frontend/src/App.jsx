@@ -1,28 +1,24 @@
-import { useMemo } from 'react';
 import CustomerPage from './pages/CustomerPage.jsx';
 import KitchenPage from './pages/KitchenPage.jsx';
 
-function getApiBaseUrl() {
-  return import.meta.env.VITE_API_BASE_URL ?? '';
-}
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? '';
 
 function getWebSocketUrl(apiBaseUrl) {
+  const url = apiBaseUrl
+    ? new URL(apiBaseUrl)
+    : new URL('/ws/notifications', window.location.origin);
+
+  url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
   if (apiBaseUrl) {
-    const url = new URL(apiBaseUrl);
-    url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
     url.pathname = '/ws/notifications';
     url.search = '';
-    return url.toString();
   }
 
-  const url = new URL('/ws/notifications', window.location.origin);
-  url.protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   return url.toString();
 }
 
 function App() {
-  const apiBaseUrl = useMemo(getApiBaseUrl, []);
-  const webSocketUrl = useMemo(() => getWebSocketUrl(apiBaseUrl), [apiBaseUrl]);
+  const webSocketUrl = getWebSocketUrl(apiBaseUrl);
   const page = getPageFromPath(window.location.pathname);
 
   return (

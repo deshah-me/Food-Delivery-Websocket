@@ -69,10 +69,10 @@ public class OrderNotificationService {
     private void rememberIfValid(OrderNotification notification, String orderKey) {
         synchronized (recentNotificationsLock) {
             OrderStatus currentStatus = orderStatuses.get(orderKey);
-            if (!canMoveTo(currentStatus, notification.status())) {
+            if (!OrderStatus.canMoveTo(currentStatus, notification.status())) {
                 throw new ResponseStatusException(
                         HttpStatus.CONFLICT,
-                        invalidTransitionMessage(currentStatus, notification.status())
+                        OrderStatus.invalidTransitionMessage(currentStatus, notification.status())
                 );
             }
 
@@ -82,34 +82,6 @@ public class OrderNotificationService {
                 recentNotifications.removeLast();
             }
         }
-    }
-
-    private boolean canMoveTo(OrderStatus currentStatus, OrderStatus nextStatus) {
-        if (currentStatus == null) {
-            return nextStatus == OrderStatus.PLACED;
-        }
-
-        return switch (currentStatus) {
-            case PLACED -> nextStatus == OrderStatus.PREPARING;
-            case PREPARING -> nextStatus == OrderStatus.DELIVERED;
-            case DELIVERED -> false;
-        };
-    }
-
-    private String invalidTransitionMessage(OrderStatus currentStatus, OrderStatus nextStatus) {
-        if (currentStatus == OrderStatus.DELIVERED) {
-            return "Delivered orders cannot be updated again.";
-        }
-
-        if (currentStatus == null && nextStatus == OrderStatus.PREPARING) {
-            return "Order must be placed before it can be prepared.";
-        }
-
-        if (nextStatus == OrderStatus.DELIVERED) {
-            return "Order must be prepared before it can be delivered.";
-        }
-
-        return "Order status update is out of sequence.";
     }
 
     private String orderKey(String orderId, String customerName) {
