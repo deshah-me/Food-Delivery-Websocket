@@ -46,6 +46,9 @@ function App() {
 }
 
 function getPageFromPath(pathname) {
+  // Handle both root and subdirectory deployments
+  // For GitHub Pages: /Food-Delivery-Websocket/kitchen
+  // For root: /kitchen
   return pathname.toLowerCase().includes('/customer') ? 'customer' : 'kitchen';
 }
 
