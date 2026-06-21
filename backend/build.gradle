@@ -24,3 +24,38 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// Build frontend and include into Spring Boot static resources
+def frontendDir = file("${projectDir}/../frontend")
+def frontendDist = file("${projectDir}/../frontend/dist")
+
+tasks.register('buildFrontend', Exec) {
+    group = 'build'
+    description = 'Install and build the frontend (npm)'
+    workingDir = frontendDir
+    // Use a shell so we can chain commands in a cross-platform way on CI builders
+    commandLine = ['sh', '-c', 'npm ci && npm run build']
+    onlyIf { frontendDir.exists() }
+}
+
+tasks.register('copyFrontend') {
+    group = 'build'
+    description = 'Copy frontend/dist into Spring Boot static resources'
+    dependsOn tasks.named('buildFrontend')
+    doLast {
+        if (frontendDist.exists()) {
+            copy {
+                from frontendDist
+                into "$projectDir/src/main/resources/static"
+            }
+            logger.lifecycle("Copied frontend dist -> src/main/resources/static")
+        } else {
+            logger.lifecycle("Frontend dist not found at ${frontendDist}. Skipping copy.")
+        }
+    }
+}
+
+// Ensure resources include the frontend output before packaging
+tasks.named('processResources') {
+    dependsOn tasks.named('copyFrontend')
+}
