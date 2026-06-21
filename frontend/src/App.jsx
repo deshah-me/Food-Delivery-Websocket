@@ -6,23 +6,14 @@ function getApiBaseUrl() {
   return import.meta.env.VITE_API_BASE_URL ?? '';
 }
 
-function getWebSocketUrl(apiBaseUrl) {
-  if (apiBaseUrl) {
-    const url = new URL(apiBaseUrl);
-    url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
-    url.pathname = '/ws/notifications';
-    url.search = '';
-    return url.toString();
-  }
-
-  const url = new URL('/ws/notifications', window.location.origin);
-  url.protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-  return url.toString();
+function getWebSocketUrl() {
+  const wsOrigin = window.location.origin.replace(/^https:/, 'wss:').replace(/^http:/, 'ws:');
+  return `${wsOrigin}/ws/notifications`;
 }
 
 function App() {
   const apiBaseUrl = useMemo(getApiBaseUrl, []);
-  const webSocketUrl = useMemo(() => getWebSocketUrl(apiBaseUrl), [apiBaseUrl]);
+  const webSocketUrl = useMemo(() => getWebSocketUrl(), []);
   const page = getPageFromPath(window.location.pathname);
 
   return (
