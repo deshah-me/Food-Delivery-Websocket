@@ -33,14 +33,15 @@ jobs:
       - name: Build and test
         run: ./gradlew clean build
 
-      - name: Upload backend test results
+      - name: Upload backend build artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: backend-test-results
+          name: backend-artifacts
           path: |
-            backend/build/reports/tests/test
-            backend/build/test-results/test
+            build/libs
+            build/reports/tests/test
+            build/test-results/test
 
   frontend:
     name: Frontend (React + Vite)
@@ -57,7 +58,7 @@ jobs:
         with:
           node-version: '20'
           cache: npm
-          cache-dependency-path: frontend/package.json
+          cache-dependency-path: package.json
 
       - name: Install dependencies
         run: npm install
@@ -67,3 +68,42 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Upload frontend build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-build
+          path: dist
+
+  deploy:
+    name: Deploy Frontend to GitHub Pages
+    needs: [backend, frontend]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build frontend for deployment
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: frontend/dist
+          keep_history: false
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
