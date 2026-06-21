@@ -102,13 +102,12 @@ jobs:
         run: npm run build
         working-directory: frontend
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: frontend/dist
-          artifact_name: pages-artifact
-
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          artifact_name: pages-artifact
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: frontend/dist
+          publish_branch: gh-pages
+          keep_history: false
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
