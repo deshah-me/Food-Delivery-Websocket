@@ -7,8 +7,7 @@ function getApiBaseUrl() {
 }
 
 function getWebSocketUrl() {
-  const wsOrigin = window.location.origin.replace(/^https:/, 'wss:').replace(/^http:/, 'ws:');
-  return `${wsOrigin}/ws/notifications`;
+  return 'wss://food-delivery-websocket.railway.internal/ws/notifications';
 }
 
 function App() {
