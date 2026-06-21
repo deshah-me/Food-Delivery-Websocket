@@ -55,6 +55,38 @@ cd frontend
 npm test
 ```
 
+## Docker & Deployment
+
+### Run with Docker locally
+
+```bash
+docker build -t food-delivery-app .
+docker run -p 8080:8080 food-delivery-app
+```
+
+Open: `http://localhost:8080/kitchen`
+
+### Deploy to Production
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions on:
+- **Railway** (recommended - free tier with $5 credits)
+- **Render** (free tier)
+- **Fly.io** (free tier)
+
+### Automated Deployments
+
+This repo has GitHub Actions CI/CD that:
+1. ✅ Builds and tests backend (Gradle + JUnit)
+2. ✅ Builds and tests frontend (Node + Vitest)
+3. ✅ Builds Docker image combining both
+4. ✅ Pushes to GitHub Container Registry
+5. ✅ Deploys frontend to GitHub Pages
+
+**Static Frontend URL**: `https://deshah-me.github.io/Food-Delivery-Websocket/kitchen`
+
+**Full Stack Docker**: Deploy to Railway/Render/Fly.io for complete functionality
+
+
 
 ## Screenshots
 <img width="935" height="517" alt="image" src="https://github.com/user-attachments/assets/a09db8a2-8268-4b33-a9e2-46dedbed440a" />
