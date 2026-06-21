@@ -20,8 +20,10 @@ WORKDIR /app
 # Copy frontend dist first
 COPY --from=frontend-builder /app/frontend/dist ./backend/src/main/resources/static
 
-# Copy backend build files
-COPY backend/gradle* ./backend/
+# Copy backend gradle wrapper and config
+COPY backend/gradle ./backend/gradle
+COPY backend/gradlew ./backend/gradlew
+COPY backend/gradlew.bat ./backend/gradlew.bat
 COPY backend/settings.gradle ./backend/
 COPY backend/build.gradle ./backend/
 
