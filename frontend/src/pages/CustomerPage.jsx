@@ -9,7 +9,7 @@ import {
   mergeNotifications,
   statusActions,
 } from '../business/orderStatus.js';
-import { useNotificationSocket } from '../websocket/useNotificationSocket.js';
+import { useNotificationSocket } from '../websocket/useNotificationSocket.jsx';
 import TopBanner from './TopBanner.jsx';
 
 const stepStateLabels = {
