@@ -1,7 +1,7 @@
 name: CI
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -89,12 +89,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js 24
+      - name: Use Node.js 24
         uses: actions/setup-node@v4
         with:
           node-version: '24'
 
-      - name: Install dependencies
+      - name: Install frontend dependencies
         run: npm install
         working-directory: frontend
 
@@ -106,6 +106,9 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: frontend/dist
+          artifact_name: pages-artifact
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: pages-artifact
