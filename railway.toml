@@ -1,0 +1,6 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = ""
+restartPolicyMaxRetries = 5
